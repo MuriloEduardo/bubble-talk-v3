@@ -1,0 +1,8 @@
+<span class="mdl-layout-title">{{ chat?.nome }}</span>
+<nav class="mdl-navigation">
+<a class="mdl-navigation__link" routerLinkActive="active"  [routerLink]="[chat.id]" href="">Dashboard</a>
+<a class="mdl-navigation__link" href="">Conversas</a>
+<a class="mdl-navigation__link" href="">Equipe</a>
+<a class="mdl-navigation__link" href="">Layout</a>
+<a class="mdl-navigation__link" routerLinkActive="active" [routerLink]="[chat.id, 'configuracao']" href="">Configurações</a>
+</nav>

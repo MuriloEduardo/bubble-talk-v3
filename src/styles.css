@@ -1,0 +1,7 @@
+.page-content {
+	padding: 0 32px 0 65px!important;
+}
+.mdl-grid.center-items {
+  align-items: center;
+  justify-content: center;
+}

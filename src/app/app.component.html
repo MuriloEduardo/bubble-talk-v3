@@ -1,0 +1,22 @@
+<!-- Always shows a header, even in smaller screens. -->
+<div mdl class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-color--grey-100" [class.mdl-layout--fixed-drawer]="mostrarDrawer">
+  <header *ngIf="mostrarMenu" class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title" routerLink="">{{ title }}</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" routerLinkActive="active" routerLink="sua-conta">Sua Conta</a>
+      </nav>
+    </div>
+  </header>
+  <div app-sidebar *ngIf="mostrarDrawer" class="mdl-layout__drawer"></div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+        <!-- Your content goes here -->
+        <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
