@@ -29,7 +29,7 @@
         <router-outlet></router-outlet>
     </div>
   </main>
-  <footer [class.mdl-layout--fixed-drawer]="mostrarDrawer" class="mdl-mega-footer">
+  <footer *ngIf="mostrarMenu" [class.mdl-layout--fixed-drawer]="mostrarDrawer" class="mdl-mega-footer">
     <div *ngIf="!mostrarDrawer" class="mdl-mega-footer__bottom-section">
       <div class="mdl-logo">Title</div>
       <ul class="mdl-mega-footer__link-list">
