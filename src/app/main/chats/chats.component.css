@@ -1,0 +1,8 @@
+.full-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('../assets/welcome_card.jpg') center / cover;
+}
+.full-card-wide > .mdl-card__menu {
+  color: #fff;
+}

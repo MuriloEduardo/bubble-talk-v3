@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
 
-import { ChatsService } from '../chats/chats.service';
+import { ChatsService } from '../main/chats/chats.service';
 import { SidebarService } from '../sidebar/sidebar.service';
 
 @Component({

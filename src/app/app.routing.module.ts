@@ -10,7 +10,7 @@ import { AuthGuard } from './guards/auth.guard';
 const appRoutes: Routes = [
 	{
 		path: '',
-		loadChildren: 'app/chats/chats.module#ChatsModule',
+		loadChildren: 'app/main/main.module#MainModule',
 		//canActivate: [AuthGuard]
 	},
 	{

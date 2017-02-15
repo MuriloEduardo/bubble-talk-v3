@@ -10,14 +10,6 @@ export class ChatsService {
 			{
 				id: '111',
 				nome: 'Sistemas Global'
-			},
-			{
-				id: '222',
-				nome: 'Coca Cola'
-			},
-			{
-				id: '333',
-				nome: 'Prefeitura de Porto Alegre'
 			}
 		];
 	}

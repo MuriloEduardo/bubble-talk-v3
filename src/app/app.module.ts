@@ -7,7 +7,7 @@ import { MDL } from './directives/material-design-lite-upgrade-elements.directiv
 
 import { AuthService } from './login/auth.service';
 import { SidebarService } from './sidebar/sidebar.service';
-import { ChatsService } from './chats/chats.service';
+import { ChatsService } from './main/chats/chats.service';
 
 import { AuthGuard } from './guards/auth.guard';
 

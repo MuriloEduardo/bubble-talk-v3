@@ -1,5 +1,5 @@
 <!-- Always shows a header, even in smaller screens. -->
-<div mdl class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-color--grey-100" [class.mdl-layout--fixed-drawer]="mostrarDrawer">
+<div mdl class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-color--grey-200" [class.mdl-layout--fixed-drawer]="mostrarDrawer">
   <header *ngIf="mostrarMenu" class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
@@ -8,8 +8,14 @@
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" routerLinkActive="active" routerLink="sua-conta">Sua Conta</a>
+        <a class="mdl-navigation__link" href="" routerLinkActive="active" routerLink="sua-conta">Sua Conta</a>
       </nav>
+    </div>
+    <!-- Tabs -->
+    <div *ngIf="!mostrarDrawer" class="mdl-layout__tab-bar mdl-js-ripple-effect">
+      <a class="mdl-layout__tab is-active">Ver todos os chats</a>
+      <a class="mdl-layout__tab" routerLinkActive="pessoas">Conectar-se à Pessoas</a>
+      <a class="mdl-layout__tab">Criar Novo Chat</a>
     </div>
   </header>
   <div app-sidebar *ngIf="mostrarDrawer" class="mdl-layout__drawer"></div>
@@ -18,5 +24,21 @@
         <!-- Your content goes here -->
         <router-outlet></router-outlet>
     </div>
+    <footer *ngIf="mostrarDrawer" class="mdl-mini-footer">
+      <div class="mdl-mini-footer__right-section">
+        <ul class="mdl-mini-footer__link-list">
+          <li>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+              Descartar
+            </button>
+          </li>
+          <li>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+              Salvar Alterações
+            </button>
+          </li>
+        </ul>
+      </div>
+    </footer>
   </main>
 </div>

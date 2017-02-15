@@ -6,6 +6,9 @@ import { ChatRoutingModule } from './chat.routing.module';
 import { ChatComponent } from './chat.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ConfiguracaoComponent } from './configuracao/configuracao.component';
+import { ConversasComponent } from './conversas/conversas.component';
+import { LayoutComponent } from './layout/layout.component';
+import { EquipeComponent } from './equipe/equipe.component';
 
 @NgModule({
 	imports: [
@@ -15,7 +18,10 @@ import { ConfiguracaoComponent } from './configuracao/configuracao.component';
 	declarations: [
 		ChatComponent,
 		DashboardComponent,
-		ConfiguracaoComponent
+		ConfiguracaoComponent,
+		ConversasComponent,
+		LayoutComponent,
+		EquipeComponent
 	],
 	providers: []
 })
