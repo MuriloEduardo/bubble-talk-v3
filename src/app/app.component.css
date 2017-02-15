@@ -4,3 +4,11 @@
 .tab-icon {
 	line-height: 78px!important;
 }
+.mdl-mega-footer__link-list {
+	margin-bottom: 0;
+}
+footer.mdl-mega-footer.mdl-layout--fixed-drawer {
+	margin-left: 240px;
+	width: calc(100% - 240px);
+	padding: initial;
+}

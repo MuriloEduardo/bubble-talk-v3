@@ -1,3 +1,6 @@
+.mdl-card {
+	min-height: initial;
+}
 .full-card-wide > .mdl-card__title {
-  height: 100px;
+  height: 64px;
 }
