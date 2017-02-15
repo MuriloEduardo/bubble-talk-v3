@@ -11,12 +11,6 @@
         <a class="mdl-navigation__link" href="" routerLinkActive="active" routerLink="sua-conta">Sua Conta</a>
       </nav>
     </div>
-    <!-- Tabs -->
-    <div *ngIf="!mostrarDrawer" class="mdl-layout__tab-bar mdl-js-ripple-effect">
-      <a class="mdl-layout__tab is-active">Ver todos os chats</a>
-      <a class="mdl-layout__tab" routerLinkActive="pessoas">Conectar-se à Pessoas</a>
-      <a class="mdl-layout__tab">Criar Novo Chat</a>
-    </div>
   </header>
   <div app-sidebar *ngIf="mostrarDrawer" class="mdl-layout__drawer"></div>
   <main class="mdl-layout__content">
