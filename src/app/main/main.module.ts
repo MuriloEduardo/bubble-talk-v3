@@ -10,6 +10,7 @@ import { ChatsService } from './chats/chats.service';
 import { ChatsComponent } from './chats/chats.component';
 
 import { PessoasComponent } from './pessoas/pessoas.component';
+import { NovoComponent } from './novo/novo.component';
 
 @NgModule({
 	imports: [
@@ -19,7 +20,8 @@ import { PessoasComponent } from './pessoas/pessoas.component';
 	declarations: [
 		ChatsComponent,
 		MainComponent,
-		PessoasComponent
+		PessoasComponent,
+		NovoComponent
 	],
 	providers: [
 		ChatsService

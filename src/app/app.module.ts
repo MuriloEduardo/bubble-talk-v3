@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { MDL } from './directives/material-design-lite-upgrade-elements.directive';
+import { MdlUpgradeDirective } from './directives/mdl-upgrade.directive';
 
 import { AuthService } from './login/auth.service';
 import { SidebarService } from './sidebar/sidebar.service';
@@ -21,7 +21,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MDL,
+    MdlUpgradeDirective,
     SuaContaComponent,
     LoginComponent,
     ChatNaoEncontradoComponent,

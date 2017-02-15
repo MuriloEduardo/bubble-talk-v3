@@ -1,15 +1,25 @@
-<!-- Always shows a header, even in smaller screens. -->
-<div mdl class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-color--grey-200" [class.mdl-layout--fixed-drawer]="mostrarDrawer">
-  <header *ngIf="mostrarMenu" class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title" routerLink="">{{ title }}</span>
-      <!-- Add spacer, to align navigation to the right -->
-      <div class="mdl-layout-spacer"></div>
-      <!-- Navigation. We hide it in small screens. -->
+<div mdlUpgrade class="mdl-layout mdl-js-layout mdl-layout--fixed-header" [class.mdl-layout--fixed-drawer]="mostrarDrawer">
+  <header *ngIf="mostrarMenu" class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+    <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+    </div>
+    <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+      <h3 routerLink="">{{ title }}</h3>
+      <div class="mdl-layout-spacer"></div>      
       <nav class="mdl-navigation mdl-layout--large-screen-only">
         <a class="mdl-navigation__link" href="" routerLinkActive="active" routerLink="sua-conta">Sua Conta</a>
       </nav>
+    </div>
+    <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+    </div>
+    <div *ngIf="!mostrarDrawer" class="mdl-layout__tab-bar-container">
+      <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+        <a [routerLinkActiveOptions]="{ exact: true }" routerLink="" routerLinkActive="is-active" class="tab-icon mdl-layout__tab is-active"><i class="material-icons">&#xE88A;</i></a>
+        <a routerLink="pessoas" routerLinkActive="is-active" class="mdl-layout__tab">Conecte-se à Pessoas</a>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add" routerLink="novo">
+          <i class="material-icons" role="presentation">add</i>
+          <span class="visuallyhidden">Add</span>
+        </button>
+      </div>
     </div>
   </header>
   <div app-sidebar *ngIf="mostrarDrawer" class="mdl-layout__drawer"></div>
