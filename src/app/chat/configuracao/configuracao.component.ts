@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChatsService } from '../../main/chats/chats.service';
 
 @Component({
   selector: 'app-configuracao',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfiguracaoComponent implements OnInit {
 
-  constructor() { }
+	chat: any;
 
-  ngOnInit() {
-  }
+	constructor(private chatsService: ChatsService) { }
 
+	ngOnInit() {
+		this.chatsService.chat.subscribe(chat => {
+			this.chat = chat;
+		});
+	}
+
+	deleteChat() {
+		this.chatsService.deleteChat(this.chat._id).subscribe(data => {
+			console.log(data)	
+			if(data.n==1) {
+
+			}
+		});
+	}
 }

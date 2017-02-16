@@ -7,11 +7,9 @@
 			<img src="../../assets/user.jpg" class="drawer-avatar">
 		</div>
 		<div class="mdl-cell mdl-cell--9-col">
-			<h3>Lalala <i class="material-icons icon-online">&#xE3FA;</i></h3>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text" id="id-chat" readonly autofocus value="9as8dj9a8sd9a8s">
-				<label class="mdl-textfield__label" for="id-chat">ID do Chat</label>
-			</div>
+			<h3>{{ chat?.dados.appname }} <i class="material-icons icon-online">&#xE3FA;</i></h3>
+			<h6>ID do Chat: <strong>{{ chat?._id }}</strong></h6>
+			<h6>Criado em: <strong>{{chat?.dados.data_cadastro | date: 'fullDate'}}</strong></h6>
 		</div>
 	</div>
 </div>

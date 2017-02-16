@@ -1,7 +1,7 @@
 <header class="drawer-header">
   <div class="drawer-avatar-dropdown">
-  	<img src="../../assets/user.jpg" class="drawer-avatar">
-    <span>{{ chat?.nome }}</span>
+    <img src="../../assets/user.jpg" class="drawer-avatar">
+    <span>{{ chat?.dados.appname }}</span>
     <div class="mdl-layout-spacer"></div>
     <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
       <i class="material-icons" role="presentation">&#xE5D4;</i>
@@ -15,9 +15,9 @@
   </div>
 </header>
 <nav class="mdl-navigation">
-	<a class="mdl-navigation__link" routerLinkActive="active" [routerLink]="[chat.id]" href="">Painel</a>
-	<a class="mdl-navigation__link" routerLinkActive="active" [routerLink]="[chat.id, 'conversas']" href="">Conversas</a>
-	<a class="mdl-navigation__link" routerLinkActive="active" [routerLink]="[chat.id, 'equipe']" href="">Equipe</a>
-	<a class="mdl-navigation__link" routerLinkActive="active" [routerLink]="[chat.id, 'layout']" href="">Layout</a>
-	<a class="mdl-navigation__link" routerLinkActive="active" [routerLink]="[chat.id, 'configuracao']" href="">Configurações</a>
+  <a class="mdl-navigation__link" routerLinkActive="active" [routerLink]="[chat?._id]" href="">Painel</a>
+  <a class="mdl-navigation__link" routerLinkActive="active" [routerLink]="[chat?._id, 'conversas']" href="">Conversas</a>
+  <a class="mdl-navigation__link" routerLinkActive="active" [routerLink]="[chat?._id, 'equipe']" href="">Equipe</a>
+  <a class="mdl-navigation__link" routerLinkActive="active" [routerLink]="[chat?._id, 'layout']" href="">Layout</a>
+  <a class="mdl-navigation__link" routerLinkActive="active" [routerLink]="[chat?._id, 'configuracao']" href="">Configurações</a>
 </nav>

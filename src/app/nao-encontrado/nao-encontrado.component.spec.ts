@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { ChatNaoEncontradoComponent } from './chat-nao-encontrado.component';
+import { NaoEncontradoComponent } from './nao-encontrado.component';
 
-describe('ChatNaoEncontradoComponent', () => {
-  let component: ChatNaoEncontradoComponent;
-  let fixture: ComponentFixture<ChatNaoEncontradoComponent>;
+describe('NaoEncontradoComponent', () => {
+  let component: NaoEncontradoComponent;
+  let fixture: ComponentFixture<NaoEncontradoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChatNaoEncontradoComponent ]
+      declarations: [ NaoEncontradoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChatNaoEncontradoComponent);
+    fixture = TestBed.createComponent(NaoEncontradoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,5 +1,25 @@
 <div class="mdl-grid">
 	<div class="mdl-cell mdl-cell--12-col">
-		<h1>Novo Chat</h1>
+		<div class="full-card-wide mdl-card mdl-shadow--2dp">
+			<div class="mdl-card__title">
+				<h2 class="mdl-card__title-text">Novo Chat</h2>
+			</div>
+			<div class="mdl-grid mdl-card__actions mdl-card--border">
+				<form (submit)="addChat($event)">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="id-chat" [(ngModel)]="appname" name="appname" autofocus>
+						<label class="mdl-textfield__label" for="id-chat">Nome</label>
+					</div>
+					<div>
+						<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="reset">
+			            	Descartar
+			            </button>
+						<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" type="submit">
+							Criar
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
 	</div>
 </div>

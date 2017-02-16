@@ -1,6 +1,6 @@
 .mdl-card {
-	min-height: initial;
-}
-.full-card-wide > .mdl-card__title {
-  height: 64px;
+  min-height: initial;
+  overflow: visible;
+  z-index: auto;
+  width: 100%;
 }

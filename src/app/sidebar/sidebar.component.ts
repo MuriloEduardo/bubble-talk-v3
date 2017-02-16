@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { SidebarService } from './sidebar.service';
 import { Router } from '@angular/router';
+
+import { SidebarService } from './sidebar.service';
+import { ChatsService } from '../main/chats/chats.service';
 
 @Component({
   selector: '[app-sidebar]',

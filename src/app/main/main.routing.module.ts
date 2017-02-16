@@ -8,9 +8,9 @@ import { NovoComponent } from './novo/novo.component';
 
 const mainRoutes: Routes = [
 	{ path: '', component: MainComponent, children: [
-		{ path: '', component: ChatsComponent },
 		{ path: 'pessoas', component: PessoasComponent },
-		{ path: 'novo', component: NovoComponent }
+		{ path: 'novo', component: NovoComponent },
+		{ path: '', component: ChatsComponent }
 	]}
 ];
 

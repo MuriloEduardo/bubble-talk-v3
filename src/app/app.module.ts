@@ -15,8 +15,8 @@ import { AppComponent } from './app.component';
 import { SuaContaComponent } from './sua-conta/sua-conta.component';
 import { AppRoutingModule } from './app.routing.module';
 import { LoginComponent } from './login/login.component';
-import { ChatNaoEncontradoComponent } from './chat-nao-encontrado/chat-nao-encontrado.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +24,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     MdlUpgradeDirective,
     SuaContaComponent,
     LoginComponent,
-    ChatNaoEncontradoComponent,
-    SidebarComponent
+    SidebarComponent,
+    NaoEncontradoComponent
   ],
   imports: [
     BrowserModule,

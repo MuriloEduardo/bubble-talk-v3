@@ -9,6 +9,7 @@ export class MdlUpgradeDirective {
   @Input() mglUpgrade;
 
   constructor(el: ElementRef) {
+  	console.log('mdlUpgrade upgrade')
     componentHandler.upgradeElement(el.nativeElement);
   }
 }

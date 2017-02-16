@@ -24,17 +24,18 @@ export class ChatComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-		this.inscricao = this.route.params.subscribe(
-			(params: any) => {
-				this.id = params['id'];
+		this.inscricao = this.route.params.subscribe((params: any) => {
+				this.chatsService.getChat(params['id']).subscribe(chat => {
+					
+					if(!chat) {
+						this.router.navigate(['nao-encontrado']);
+						return;
+					}
 
-				this.chat = this.chatsService.getChat(this.id);
-
-				this.sidebarService.showDrawer(this.chat);
-
-				if(this.chat == null) {
-					this.router.navigate(['chat-nao-encontrado']);
-				}
+					console.log(this.chat)
+					this.chat = chat;
+					this.sidebarService.showDrawer(chat);
+				});
 			}
 		)
 	}

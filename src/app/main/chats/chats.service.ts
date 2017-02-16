@@ -1,45 +1,36 @@
 import { Injectable } from '@angular/core';
+import { Http, Headers } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ChatsService {
 
-  	constructor() { }
+	private apiUrl: string = 'http://127.0.0.1:3000/api/';
+	public chats: any;
+	public chat: any;
 
-	getChats() {
-		return [
-			{
-				id: 'bm1n2bn1mb21b2lkm',
-				nome: 'Empresa 1'
-			},
-			{
-				id: '0a9sdk0a9sd0a9s',
-				nome: 'Empresa 2'
-			},
-			{
-				id: 'l68p6l78p67lp8p6',
-				nome: 'Empresa 3'
-			},
-			{
-				id: '09askd0a9ksd',
-				nome: 'Empresa 4'
-			},
-			{
-				id: '7sdg7a6sgd76ags',
-				nome: 'Empresa 5'
-			}
-		];
-	}
+  	constructor(private http: Http) {
+  		console.dir('Chats Service Inicializado...');
+  		this.chats = this.http.get(this.apiUrl + 'chats').map(res => res.json());
+  	}
 
 	getChat(id: string) {
-		let chats = this.getChats();
+		return this.chat = this.http.get(this.apiUrl + 'chat/' + id).map(res => res.json());
+	}
 
-		for (var i = 0; i < chats.length; ++i) {
-			let chat = chats[i];
-			if(chat.id == id) {
-				return chat;
-			}
-		}
-		
-		return null;
+	addChat(newChat: any) {
+		let headers = new Headers();
+		headers.append('Content-Type', 'application/json');
+		return this.http.post(this.apiUrl + 'chat', JSON.stringify(newChat), {headers: headers}).map(res => res.json());
+	}
+
+	deleteChat(id: string) {
+		return this.http.delete(this.apiUrl + 'chat/' + id).map(res => res.json());
+	}
+
+	updateChat(chat: any) {
+		let headers = new Headers();
+		headers.append('Content-Type', 'application/json');
+		return this.http.post(this.apiUrl + 'chat' + chat._id, JSON.stringify(chat), {headers: headers}).map(res => res.json());
 	}
 }
