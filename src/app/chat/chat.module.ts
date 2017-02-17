@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 
 import { ChatRoutingModule } from './chat.routing.module';
 
@@ -13,6 +15,7 @@ import { EquipeComponent } from './equipe/equipe.component';
 @NgModule({
 	imports: [
 		CommonModule,
+		FormsModule,
 		ChatRoutingModule
 	],
 	declarations: [

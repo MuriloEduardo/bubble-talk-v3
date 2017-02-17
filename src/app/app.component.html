@@ -25,24 +25,7 @@
   <div app-sidebar *ngIf="mostrarDrawer" class="mdl-layout__drawer"></div>
   <main class="mdl-layout__content">
     <div class="page-content">
-        <!-- Your content goes here -->
         <router-outlet></router-outlet>
     </div>
   </main>
-  <footer *ngIf="mostrarMenu&&mostrarDrawer" [class.mdl-layout--fixed-drawer]="mostrarDrawer" class="mdl-mega-footer">
-    <div class="mdl-mega-footer__bottom-section mdl-mega-footer__right-section">
-        <ul class="mdl-mini-footer__link-list">
-          <li>
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-              Descartar
-            </button>
-          </li>
-          <li>
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-              Salvar Alterações
-            </button>
-          </li>
-        </ul>
-      </div>
-  </footer>
 </div>
