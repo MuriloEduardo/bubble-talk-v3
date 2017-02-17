@@ -1,1 +1,10 @@
 <h1>Conversas</h1>
+{{ dadosSocket.id }}
+<div class="mdl-grid">
+	<div class="mdl-cell mdl-cell--12-col">
+		<div *ngFor="let message of messages">
+		  {{message.text}}
+		</div>
+		<input [(ngModel)]="message"  /><button (click)="sendMessage()">Send</button>	
+	</div>
+</div>

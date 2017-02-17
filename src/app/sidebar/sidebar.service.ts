@@ -10,7 +10,6 @@ export class SidebarService {
 
 	showDrawer(obj: any) {
 		console.dir('SidebarService Inicializado...')
-		console.log(obj)
 		this.chat = obj;
 		this.mostrarDrawerEmitter.emit(true);
 	}

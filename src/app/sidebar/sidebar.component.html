@@ -1,4 +1,4 @@
-<header class="drawer-header">
+<header *ngIf="chat" class="drawer-header">
   <div class="drawer-avatar-dropdown">
     <img src="../../assets/user.jpg" class="drawer-avatar">
     <span>{{ chat?.dados.appname }}</span>

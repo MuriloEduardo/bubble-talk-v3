@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChatService } from '../chat.service';
 
 @Component({
   selector: 'app-conversas',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConversasComponent implements OnInit {
 
-  constructor() { }
+	messages;
+	message;
+	dadosSocket: any = this.chatService.socket;
 
-  ngOnInit() {
-  }
+	constructor(private chatService: ChatService) { }
 
+	ngOnInit() {
+	    this.messages = this.chatService.messages;
+	}
+
+	sendMessage(){
+		this.chatService.sendMessage(this.message);
+		this.message = undefined;
+	}
 }

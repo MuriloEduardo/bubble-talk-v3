@@ -6,7 +6,6 @@ import { MainRoutingModule } from './main.routing.module';
 
 import { MainComponent } from './main.component';
 import { ChatsComponent } from './chats/chats.component';
-import { PessoasComponent } from './pessoas/pessoas.component';
 import { NovoComponent } from './novo/novo.component';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { NovoComponent } from './novo/novo.component';
 	declarations: [
 		ChatsComponent,
 		MainComponent,
-		PessoasComponent,
 		NovoComponent
 	]
 })

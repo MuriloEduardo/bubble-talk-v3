@@ -1,31 +1,3 @@
-<div mdlUpgrade class="mdl-layout mdl-js-layout mdl-layout--fixed-header" [class.mdl-layout--fixed-drawer]="mostrarDrawer">
-  <header *ngIf="mostrarMenu" class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary mdl-shadow--2dp">
-    <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-    </div>
-    <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-      <h5 routerLink="">{{ title }}</h5>
-      <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" href="" routerLinkActive="active" routerLink="sua-conta">Sua Conta</a>
-      </nav>
-    </div>
-    <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-    </div>
-    <div *ngIf="!mostrarDrawer" class="mdl-layout__tab-bar-container">
-      <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-        <a [routerLinkActiveOptions]="{ exact: true }" routerLink="" routerLinkActive="is-active" class="tab-icon mdl-layout__tab is-active"><i class="material-icons">&#xE88A;</i></a>
-        <a routerLink="pessoas" routerLinkActive="is-active" class="mdl-layout__tab">Conecte-se à Pessoas</a>
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add" routerLink="novo">
-          <i class="material-icons" role="presentation">add</i>
-          <span class="visuallyhidden">Add</span>
-        </button>
-      </div>
-    </div>
-  </header>
-  <div app-sidebar *ngIf="mostrarDrawer" class="mdl-layout__drawer"></div>
-  <main class="mdl-layout__content">
-    <div class="page-content">
-        <router-outlet></router-outlet>
-    </div>
-  </main>
-</div>
+<app-navbar *ngIf="mostrarMenu"></app-navbar>
+<div app-sidebar *ngIf="mostrarDrawer" class="mdl-layout__drawer"></div>
+<router-outlet></router-outlet>
