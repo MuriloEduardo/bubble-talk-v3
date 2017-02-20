@@ -1,0 +1,22 @@
+#search-chats {
+	margin: 15px auto;
+}
+input[type="search"] {
+	height: 64px !important;
+	margin-bottom: 0!important;
+}
+.input-field input[type=search]:focus {
+	background-color: transparent;
+	color: #fff;
+}
+.input-field input[type=search]:focus + label i {
+	color: #fff;
+}
+.input-field label:not(.label-icon).active {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+::-webkit-input-placeholder { color: #fff; }
+:-moz-placeholder { color: #fff; }
+::-moz-placeholder { color: #fff; }
+:-ms-input-placeholder { color: #fff; }
