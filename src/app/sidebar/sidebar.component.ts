@@ -5,7 +5,7 @@ import { SidebarService } from './sidebar.service';
 import { ChatsService } from '../main/chats/chats.service';
 
 @Component({
-  selector: '[app-sidebar]',
+  selector: 'sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
