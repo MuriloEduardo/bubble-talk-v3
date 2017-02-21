@@ -13,7 +13,8 @@
 				<div class="col s4">
 					<ul class="right">
 						<li>
-							<a class="waves-effect waves-light btn">Adicionar um Novo Chat <i class="material-icons right">&#xE145;</i></a>
+							<!-- Modal Trigger -->
+							<!-- <a class="modal-trigger waves-effect waves-light btn" (click)="openModal()">Adicionar um Novo Chat <i class="material-icons right">&#xE145;</i></a> -->
 						</li>
 					</ul>
 				</div>
@@ -21,4 +22,18 @@
 		</div>
 	</nav>
 	<router-outlet></router-outlet>
+</div>
+<!-- Modal Trigger -->
+<a class="waves-effect waves-light btn modal-trigger" (click)="this.openModal()">Modal</a>
+ 
+<!-- Modal Structure -->
+<div id="modal1" class="modal bottom-sheet" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="modalActions">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a class="waves-effect waves-green btn-flat" (click)="closeModal()">Close</a>
+    <a class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
 </div>

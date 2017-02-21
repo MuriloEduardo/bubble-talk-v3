@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { MaterializeModule } from 'angular2-materialize';
 
 import { AuthService } from './login/auth.service';
 import { SidebarService } from './sidebar/sidebar.service';
@@ -18,6 +19,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
+import "materialize-css";
+import "angular2-materialize";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +35,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterializeModule
   ],
   providers: [
     AuthService,

@@ -1,5 +1,9 @@
 .card .card-content {
-	padding: 18px;
+	padding: 0 15px;
 	max-height: 100px;
+	max-width: 190px;
 	cursor: pointer;
+}
+.card .card-content h6 small {
+	font-size: 10px;
 }

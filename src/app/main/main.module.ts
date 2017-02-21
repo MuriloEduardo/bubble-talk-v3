@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MaterializeModule } from 'angular2-materialize';
 
 import { MainRoutingModule } from './main.routing.module';
 
@@ -12,7 +13,8 @@ import { NovoComponent } from './novo/novo.component';
 	imports: [
 		CommonModule,
 		MainRoutingModule,
-		FormsModule
+		FormsModule,
+		MaterializeModule
 	],
 	declarations: [
 		ChatsComponent,
