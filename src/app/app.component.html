@@ -1,5 +1,6 @@
-<div [ngClass]="{'wrapper': mostrarDrawer}">
-	<navbar *ngIf="mostrarMenu"></navbar>
+<header navbar *ngIf="mostrarMenu" [class.wrapper]="mostrarDrawer"></header>
+<main [class.wrapper]="mostrarDrawer">
 	<router-outlet></router-outlet>
-</div>
+</main>
+<footer *ngIf="!mostrarDrawer" class="page-footer grey darken-3"></footer>
 <sidebar *ngIf="mostrarDrawer"></sidebar>

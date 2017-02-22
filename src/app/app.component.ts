@@ -5,7 +5,7 @@ import { AuthService } from './login/auth.service';
 import { SidebarService } from './sidebar/sidebar.service';
 
 @Component({
-  selector: 'app-root',
+  selector: '[app-root]',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

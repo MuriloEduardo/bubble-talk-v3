@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MaterializeModule } from 'angular2-materialize';
 
 import { ChatRoutingModule } from './chat.routing.module';
 
@@ -15,7 +16,8 @@ import { EquipeComponent } from './equipe/equipe.component';
 	imports: [
 		CommonModule,
 		FormsModule,
-		ChatRoutingModule
+		ChatRoutingModule,
+		MaterializeModule
 	],
 	declarations: [
 		ChatComponent,

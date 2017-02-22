@@ -7,7 +7,6 @@ import { MainRoutingModule } from './main.routing.module';
 
 import { MainComponent } from './main.component';
 import { ChatsComponent } from './chats/chats.component';
-import { NovoComponent } from './novo/novo.component';
 
 @NgModule({
 	imports: [
@@ -18,8 +17,7 @@ import { NovoComponent } from './novo/novo.component';
 	],
 	declarations: [
 		ChatsComponent,
-		MainComponent,
-		NovoComponent
+		MainComponent
 	]
 })
 export class MainModule {}

@@ -1,4 +1,18 @@
-.wrapper .container {
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 	width: 100%!important;
-	padding: 0 0.75rem;
 }
+main {
+	flex: 1 0 auto;
+}
+#first-load-body {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
+.card-title {
+	padding: 15px;
+}
+.right-btn { text-align: right }

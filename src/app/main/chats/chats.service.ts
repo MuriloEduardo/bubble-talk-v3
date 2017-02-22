@@ -11,7 +11,11 @@ export class ChatsService {
 
   	constructor(private http: Http) {
   		console.dir('Chats Service Inicializado...');
-  		this.chats = this.http.get(this.apiUrl + 'chats').map(res => res.json());
+  		this.chats = this.getChats();
+  	}
+
+  	getChats() {
+  		return this.http.get(this.apiUrl + 'chats').map(res => res.json());;
   	}
 
 	getChat(id: string) {

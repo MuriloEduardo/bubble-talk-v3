@@ -39,9 +39,10 @@
         <li><a routerLinkActive="active" [routerLink]="[chat?._id, 'configuracao']" href="">Configurações</a></li>
       </ul>      
 </header> -->
-<ul id="slide-out" class="side-nav fixed">
-  <li><a href="#!">Link 1</a></li>
-  <li><a href="#!">Link 1</a></li>
-  <li><a href="#!">Link 1</a></li>
-  <li><a href="#!">Link 1</a></li>
+<ul id="slide-out" class="side-nav fixed teal z-depth-2">
+  <li><a routerLinkActive="active" [routerLink]="[chat?._id]">Painel</a></li>
+  <li><a routerLinkActive="active" [routerLink]="[chat?._id, 'conversas']">Conversas</a></li>
+  <li><a routerLinkActive="active" [routerLink]="[chat?._id, 'equipe']">Equipe</a></li>
+  <li><a routerLinkActive="active" [routerLink]="[chat?._id, 'layout']">Layout</a></li>
+  <li><a routerLinkActive="active" [routerLink]="[chat?._id, 'configuracao']">Configurações</a></li>
 </ul>

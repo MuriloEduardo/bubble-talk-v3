@@ -1,30 +1,98 @@
-<!-- <div class="mdl-cell mdl-cell--4-col">
-	<div class="mdl-card mdl-shadow--2dp mdl-card--horizontal-2" [routerLink]="[chat._id]">
-	  <div class="mdl-card__title">
-	    <h2 class="mdl-card__title-text">{{ chat.dados.appname }} <div class="icon-online"></div></h2>
-	    <div class="mdl-card__subtitle-text"><strong>{{ chat._id }}</strong></div>
-	  </div>
-	  <div class="mdl-card__media">
-	    <img src="http://placehold.it/112x112/DC143C/FFFFFF" alt="img">
-	  </div>
-	</div>
-</div> -->
-<!-- <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add" routerLink="novo">
-	<i class="material-icons" role="presentation">&#xE145;</i>
-	<span class="visuallyhidden">Add</span>
-</button> -->
-
-
-<div class="row">
-	<div *ngFor="let chat of chats" class="col s12 m4" [routerLink]="[chat._id]">
-		<div class="card hoverable horizontal">
-			<div class="card-image">
-				<img src="../../assets/user.jpg">
+<div class="container">
+	<nav id="search-chats" class="teal">
+		<div class="nav-wrapper">
+			<div class="row">
+				<div class="col s8">
+					<form>
+						<div class="input-field">
+							<input id="search" type="search" placeholder="Pesquisar chats por" />
+							<label for="search"><i class="material-icons">search</i></label>
+						</div>
+					</form>
+				</div>
+				<div class="col s4">
+					<ul class="right">
+						<li>
+							<!-- Modal Trigger -->
+							<a class="modal-trigger waves-effect waves-light modal-trigger btn light-blue darken-2" (click)="openModal()">Adicionar um Novo Chat <i class="material-icons right">&#xE145;</i></a>
+						</li>
+					</ul>
+				</div>
 			</div>
-			<div class="card-stacked">
-				<div class="card-content">
-					<h5 class="truncate">{{ chat.dados.appname }}</h5>
-					<h6 class="truncate"><small>ID do Chat:</small><br><strong>{{ chat._id }}</strong></h6>
+		</div>
+	</nav>
+	<div id="modal1" class="modal modal-fixed-footer" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="modalActions">
+		<form (submit)="addChat($event)">
+			<div class="modal-content">
+				<h4>Crie um novo chat</h4>
+				<p>Começe dando um nome a ele</p>
+				<div class="row">
+					<div class="col s12">
+						<div class="row">
+							<div class="input-field col s12">
+								<input id="chat_name" type="text" [(ngModel)]="appname" name="appname" class="validate" autofocus required>
+								<label for="chat_name">Nome de Exibição</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12">
+								<input id="chat_email" type="email" [(ngModel)]="email" name="email" class="validate">
+								<label for="chat_email">E-mail para Contato</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12">
+								<select materialize="material_select" [(ngModel)]="categoria" name="categoria">
+									<option value="" disabled selected>Escolha uma categoria</option>
+									<option value="Clima">Clima</option>
+									<option value="Comida e Bebida">Comida e Bebida</option>
+									<option value="Compras">Compras</option>
+									<option value="Comunicação">Comunicação</option>
+									<option value="Diversão">Diversão</option>
+									<option value="Educação">Educação</option>
+									<option value="Esportes">Esportes</option>
+									<option value="Estilo de vida">Estilo de vida</option>
+									<option value="Finanças">Finanças</option>
+									<option value="Foto">Foto</option>
+									<option value="Jogos">Jogos</option>
+									<option value="Livros">Livros</option>
+									<option value="Local">Local</option>
+									<option value="Moda">Moda</option>
+									<option value="Música">Música</option>
+									<option value="Navegação">Navegação</option>
+									<option value="Negócios">Negócios</option>
+									<option value="Notícias">Notícias</option>
+									<option value="Produtividade">Produtividade</option>
+									<option value="Promoções e Concursos">Promoções e Concursos</option>
+									<option value="Referência">Referência</option>
+									<option value="Saúde e boa forma">Saúde e boa forma</option>
+									<option value="Utilitários">Utilitários</option>
+									<option value="Viagens">Viagens</option>
+									<option value="Vídeos">Vídeos</option>
+								</select>
+								<label>Categoria do Site</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="waves-effect btn">Salvar e Criar</button>
+				<button class="waves-effect btn grey lighten-4 black-text" (click)="closeModal()">Cancelar</button>
+			</div>
+		</form>
+	</div>
+	<div class="row">
+		<div *ngFor="let chat of chats" class="col s12 m4" [routerLink]="[chat._id]">
+			<div class="card hoverable horizontal">
+				<div class="card-image">
+					<img src="../../assets/user.jpg">
+				</div>
+				<div class="card-stacked">
+					<div class="card-content">
+						<h5 class="truncate">{{ chat.dados.appname }}</h5>
+						<h6 class="truncate"><small>ID do Chat:</small><br><strong>{{ chat._id }}</strong></h6>
+					</div>
 				</div>
 			</div>
 		</div>
