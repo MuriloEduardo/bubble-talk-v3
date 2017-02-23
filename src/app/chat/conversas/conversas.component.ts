@@ -16,6 +16,8 @@ export class ConversasComponent implements OnInit {
 
 	ngOnInit() {
 	    this.messages = this.chatService.messages;
+
+	    console.log(this.dadosSocket)
 	}
 
 	sendMessage(){

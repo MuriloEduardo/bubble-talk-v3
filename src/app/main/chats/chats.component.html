@@ -1,8 +1,9 @@
 <div class="container">
+	<div class="section">
 	<nav id="search-chats" class="teal">
 		<div class="nav-wrapper">
 			<div class="row">
-				<div class="col s8">
+				<div class="col s6">
 					<form>
 						<div class="input-field">
 							<input id="search" type="search" placeholder="Pesquisar chats por" />
@@ -10,7 +11,7 @@
 						</div>
 					</form>
 				</div>
-				<div class="col s4">
+				<div class="col s6">
 					<ul class="right">
 						<li>
 							<!-- Modal Trigger -->
@@ -21,7 +22,29 @@
 			</div>
 		</div>
 	</nav>
-	<div id="modal1" class="modal modal-fixed-footer" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="modalActions">
+	</div>
+	<div class="divider"></div>
+	<div class="section">
+		<div class="row">
+			<div *ngFor="let chat of chats" class="col s4" [routerLink]="[chat._id]">
+				<div class="card hoverable horizontal">
+					<div class="card-image">
+						<img src="http://materializecss.com/images/sample-1.jpg" [attr.alt]="chat.dados.appname" [attr.title]="chat.dados.appname" height="80px" width="80px">
+					</div>
+					<div class="card-stacked">
+						<div class="card-content">
+							<h5 class="truncate">
+								<span><strong>{{ chat.dados.appname }}</strong></span>
+								<div class="icone-online"></div>
+							</h5>
+							<h6 class="truncate"><small>ID do Chat:</small><br><span>{{ chat._id }}</span></h6>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="modal-chats" class="modal modal-fixed-footer" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="modalActions">
 		<form (submit)="addChat($event)">
 			<div class="modal-content">
 				<h4>Crie um novo chat</h4>
@@ -77,24 +100,9 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="submit" class="waves-effect btn">Salvar e Criar</button>
+				<button type="submit" class="waves-effect btn">Criar</button>
 				<button class="waves-effect btn grey lighten-4 black-text" (click)="closeModal()">Cancelar</button>
 			</div>
 		</form>
-	</div>
-	<div class="row">
-		<div *ngFor="let chat of chats" class="col s12 m4" [routerLink]="[chat._id]">
-			<div class="card hoverable horizontal">
-				<div class="card-image">
-					<img src="../../assets/user.jpg">
-				</div>
-				<div class="card-stacked">
-					<div class="card-content">
-						<h5 class="truncate">{{ chat.dados.appname }}</h5>
-						<h6 class="truncate"><small>ID do Chat:</small><br><strong>{{ chat._id }}</strong></h6>
-					</div>
-				</div>
-			</div>
-		</div>
 	</div>
 </div>
