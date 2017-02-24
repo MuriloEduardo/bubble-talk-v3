@@ -1,4 +1,16 @@
+#conversas {
+	height: 100%;
+    min-height: 1000px !important;
+}
+#conversas nav {
+	box-shadow: none;
+	border-bottom: solid thin #eee;
+}
+#conversas .col {
+	padding: 0;
+}
 #conversas .listagem-conversas {
-	padding-left: 0;
-	padding-right: 0;
+	min-height: 1000px !important;
+	height: 100%;
+	border-right: solid thin #eee;
 }

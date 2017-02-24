@@ -43,16 +43,18 @@ input[type="search"] {
 }
 .input-field input[type=search]:focus {
 	background-color: transparent;
-	color: #fff;
+	color: teal;
 }
-.input-field input[type=search]:focus + label i {
-	color: #fff;
+.input-field input[type=search]:focus + label i,
+.input-field input[type=search] + label i,
+.input-field input[type=search] {
+	color: teal;
 }
 .input-field label:not(.label-icon).active {
     -webkit-transform: translateY(0);
     transform: translateY(0);
 }
-::-webkit-input-placeholder { color: #fff; }
-:-moz-placeholder { color: #fff; }
-::-moz-placeholder { color: #fff; }
-:-ms-input-placeholder { color: #fff; }
+::-webkit-input-placeholder { color: teal; }
+:-moz-placeholder { color: teal; }
+::-moz-placeholder { color: teal; }
+:-ms-input-placeholder { color: teal; }

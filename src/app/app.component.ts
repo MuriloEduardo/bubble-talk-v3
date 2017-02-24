@@ -12,7 +12,7 @@ import { SidebarService } from './sidebar/sidebar.service';
 export class AppComponent {
   title = 'Bubble Talk';
 
-  mostrarMenu: boolean = false;
+  mostrarMenu: boolean = true;
   mostrarDrawer: boolean = false;
 
   constructor(

@@ -11,7 +11,7 @@ const appRoutes: Routes = [
 	{
 		path: 'sua-conta',
 		component: SuaContaComponent,
-		canActivate: [AuthGuard]
+		//canActivate: [AuthGuard]
 	},
 	{
 		path: 'login',
@@ -20,17 +20,17 @@ const appRoutes: Routes = [
 	{
 		path: 'nao-encontrado',
 		component: NaoEncontradoComponent,
-		canActivate: [AuthGuard]
+		//canActivate: [AuthGuard]
 	},
 	{
 		path: '',
 		loadChildren: 'app/main/main.module#MainModule',
-		canActivate: [AuthGuard]
+		//canActivate: [AuthGuard]
 	},
 	{
 		path: ':id',
 		loadChildren: 'app/chat/chat.module#ChatModule',
-		canActivate: [AuthGuard]
+		//canActivate: [AuthGuard]
 	}
 ];
 
