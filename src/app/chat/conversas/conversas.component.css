@@ -1,16 +1,75 @@
 #conversas {
 	height: 100%;
-    min-height: 1000px !important;
+	background-color: #fff;
+}
+#conversas .row {
+	margin-bottom: 0;
 }
 #conversas nav {
 	box-shadow: none;
 	border-bottom: solid thin #eee;
+	color: #212121;
+}
+#conversas nav ul a {
+	color: #212121;
+}
+#conversas nav .meus-dados {
+	padding: 0 15px;
 }
 #conversas .col {
 	padding: 0;
 }
 #conversas .listagem-conversas {
-	min-height: 1000px !important;
 	height: 100%;
 	border-right: solid thin #eee;
+}
+#body-conversa {
+	background-color: #e5ddd5;
+}
+#body-conversa main {
+	height: 300px;
+	position: relative;
+}
+#body-conversa main:before {
+	content: '';
+	position: absolute;
+	height: 300px;
+	background-image: url('../assets/bg-body-conversas.png');
+	width: 100%;
+	opacity: .06;
+}
+#body-conversa footer {
+	background-color: #f5f1ee;
+	padding: 10px 19px;
+}
+.msg {
+	padding-left: 9%;
+	padding-right: 9%;
+	position: relative;
+	float: left;
+	width: 100%;
+}
+.msg .message {
+	margin: 2.5px 0;
+	border-radius: 7.5px;
+	position: relative;
+	box-shadow: 0 1px 0.5px rgba(0,0,0,0.13);
+
+	background-color: #fff;
+    float: left;
+}
+.bubble {
+    padding: 6px 0 8px 0;
+    padding-left: 9px;
+    padding-right: 7px;
+}
+.message.out {
+    background-color: #dcf8c6!important;
+    float: right!important;
+}
+.message-text {
+	font-size: 13.6px;
+    line-height: 19px;
+    word-wrap: break-word;
+    color: #262626;
 }

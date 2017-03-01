@@ -1,32 +1,40 @@
-import { Injectable, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { Http, Headers } from '@angular/http';
+import { BehaviorSubject } from "rxjs/BehaviorSubject";
+import { Observable } from "rxjs/Observable";
 
 import { Usuario } from './usuario';
 
 @Injectable()
 export class AuthService {
 
-	private usuarioAutenticado: boolean = false;
+	private _showNav: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(null);
 
-	mostrarMenuEmitter = new EventEmitter<boolean>();
+	apiUrl: string = 'http://127.0.0.1:3000/api/';
+	usuarioAutenticado: boolean = false;
+	mostrarMenuEmitter: Observable<boolean> = this._showNav.asObservable();
 	
-	constructor(private router: Router) { }
+	constructor(private http: Http) { }
 
 	fazerLogin(usuario: Usuario) {
-		if(usuario.email === 'm@m' && usuario.senha === 'm') {
-			this.usuarioAutenticado = true;
 
-			this.mostrarMenuEmitter.emit(true);
+		let headers = new Headers();
+		let creds = 'email=' + usuario.email + '&senha=' + usuario.senha;
 
-			this.router.navigate(['']);
-		} else {
-			this.usuarioAutenticado = false;
+		headers.append('Content-Type', 'application/X-www-form-urlencoded');
 
-			this.mostrarMenuEmitter.emit(false);
-		}
+		return new Promise((resolve) => {
+			this.http.post(this.apiUrl + 'authenticate', creds, {headers: headers}).subscribe((data) => {
+				if(data.json().success) {
+					window.localStorage.setItem('auth_key', data.json().token);
+					this.usuarioAutenticado = true;
+				}
+				resolve(this.usuarioAutenticado);
+			});
+		});
 	}
-	
-	usuarioEstaAutenticado() {
-		return this.usuarioAutenticado;
+
+	showNav(ifShow: boolean) {
+		this._showNav.next(ifShow);
 	}
 }

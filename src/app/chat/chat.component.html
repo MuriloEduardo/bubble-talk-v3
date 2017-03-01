@@ -1,6 +1,8 @@
+<sidebar *ngIf="chat" [chat]="chat" [chats]="chats">
+	<a (click)="triggerToast()" materialize [materializeActions]="globalActions"></a>	
+</sidebar>
 <div class="row">
-	<div class="col s10 offset-s1">
+	<div class="col s12 wrapper">
 		<router-outlet></router-outlet>
-		<a (click)="triggerToast()" materialize [materializeActions]="globalActions"></a>
 	</div>
 </div>

@@ -6,6 +6,7 @@ import { MaterializeModule } from 'angular2-materialize';
 import { MainRoutingModule } from './main.routing.module';
 
 import { MainComponent } from './main.component';
+import { SuaContaComponent } from './sua-conta/sua-conta.component';
 import { ChatsComponent } from './chats/chats.component';
 
 @NgModule({
@@ -17,6 +18,7 @@ import { ChatsComponent } from './chats/chats.component';
 	],
 	declarations: [
 		ChatsComponent,
+		SuaContaComponent,
 		MainComponent
 	]
 })

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ChatsService } from './chats/chats.service';
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-	constructor() { }
+	constructor(private chatsService: ChatsService) {
+		this.chatsService.mostrarSidebar.emit(false);
+	}
 
 	ngOnInit() {
 	}

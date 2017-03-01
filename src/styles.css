@@ -1,8 +1,8 @@
-body {
+body, html {
 	display: flex;
-	min-height: 100vh;
 	flex-direction: column;
 	width: 100%!important;
+	height: 100%;
 }
 main { flex: 1 0 auto; }
 .card-header { border-bottom: 1px solid #e5e5e5; }
@@ -58,3 +58,11 @@ input[type="search"] {
 :-moz-placeholder { color: teal; }
 ::-moz-placeholder { color: teal; }
 :-ms-input-placeholder { color: teal; }
+
+.wrapper .container {
+	width: 100%!important;
+	margin-left: 240px;
+}
+main.wrapper {
+	padding-left: 240px;
+}

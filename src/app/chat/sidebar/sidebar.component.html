@@ -1,0 +1,30 @@
+<ul id="slide-out" class="side-nav fixed teal z-depth-2">
+  <li class="user-details teal darken-2">
+    <div class="action-user-detalis">
+      <a materialize="dropdown" class="dropdown-button waves-effect profile-btn" href="javascript:void(0)" data-activates="profile-dropdown">
+        <img src="http://materializecss.com/images/sample-1.jpg" alt="" class="circle responsive-img profile-image">
+        <div class="left">{{ chat?.dados.appname }}</div>
+        <i class="material-icons right">&#xE5C5;</i>
+      </a>
+      <!-- Dropdown Structure -->
+      <ul id="profile-dropdown" class="dropdown-content">
+        <li *ngFor="let chat of chats">
+          <a [routerLink]="['', chat?._id, {chat: chat}]">
+            <img src="http://materializecss.com/images/sample-1.jpg" alt="" class="circle responsive-img profile-image left">
+            <div class="left">
+              {{chat?.dados.appname}}
+            </div>
+          </a>
+        </li>
+        <a class="waves-effect btn">Novo Chat <i class="material-icons right">&#xE145;</i></a>
+        <li class="divider"></li>
+        <li><a [routerLink]="['']">Ver todos os chats</a></li>
+      </ul>
+    </div>
+  </li>
+  <li><a routerLinkActive="active" [routerLink]="['./']">Painel</a></li>
+  <li><a routerLinkActive="active" [routerLink]="['conversas']">Conversas</a></li>
+  <li><a routerLinkActive="active" [routerLink]="['equipe']">Equipe</a></li>
+  <li><a routerLinkActive="active" [routerLink]="['layout']">Layout</a></li>
+  <li><a routerLinkActive="active" [routerLink]="['configuracao']">Configurações</a></li>
+</ul>

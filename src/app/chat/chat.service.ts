@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
@@ -9,10 +9,26 @@ import { ChatsService } from '../main/chats/chats.service';
 @Injectable()
 export class ChatService {
 
-	private url = 'http://localhost:3000';  
-	public socket;
-	public connection;
-	public messages = [];
+	socket;
+	connection;
+	url = 'http://localhost:3000';
+	messages: any[] = [];
+	equipe: any[] = [
+		{
+			_id: '09asdkasfksmdovn2nwjef',
+			nome: 'Jonas Augusto'
+		},
+		{
+			_id: '9kj09sdkv0skasijk2wmlq',
+			nome: 'Maria Claudia'
+		},
+		{
+			_id: '8s9dfjs09dkfs0df0sd9fsd',
+			nome: 'Ricardo Antonio'
+		}
+	];
+	conversa: {};
+	conversaAtual = new EventEmitter<Object>();
 
 	constructor(private chatsService: ChatsService) {
 		console.log('Chat Service Inicializado...')
@@ -66,7 +82,7 @@ export class ChatService {
 	}
 
 	sendMessage(message){
-		this.socket.emit('new:message', message);    
+		this.socket.emit('new:message', {message: message, conversa: this.conversa});    
 	}
 
 	getMessages() {
@@ -79,5 +95,14 @@ export class ChatService {
 			};
 		})
 		return observable;
+	}
+
+	getEquipe() {
+		return this.equipe;
+	}
+
+	setConversa(conversa: any) {
+		this.conversa = conversa;
+		this.conversaAtual.emit(conversa);
 	}
 }

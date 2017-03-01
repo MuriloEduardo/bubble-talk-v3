@@ -6,6 +6,8 @@ import { MaterializeModule } from 'angular2-materialize';
 import { ChatRoutingModule } from './chat.routing.module';
 
 import { ChatComponent } from './chat.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ConfiguracaoComponent } from './configuracao/configuracao.component';
 import { ConversasComponent } from './conversas/conversas.component';
@@ -21,6 +23,8 @@ import { EquipeComponent } from './equipe/equipe.component';
 	],
 	declarations: [
 		ChatComponent,
+		SidebarComponent,
+		NaoEncontradoComponent,
 		DashboardComponent,
 		ConfiguracaoComponent,
 		ConversasComponent,

@@ -7,7 +7,6 @@ import 'rxjs/Rx';
 import { MaterializeAction } from 'angular2-materialize';
 
 import { ChatsService } from '../main/chats/chats.service';
-import { SidebarService } from '../sidebar/sidebar.service';
 import { ChatService } from './chat.service';
 
 @Component({
@@ -20,9 +19,9 @@ export class ChatComponent implements OnInit, OnDestroy {
 	globalActions = new EventEmitter<string|MaterializeAction>();
 	inscricao: Subscription;
 	chat: {};
+	chats: any[];
 
 	constructor(
-		private sidebarService: SidebarService,
 		private chatsService: ChatsService,
 		private route: ActivatedRoute,
 		private router: Router,
@@ -36,25 +35,27 @@ export class ChatComponent implements OnInit, OnDestroy {
 			_id: '0a9sjd0asd09aks',
 			nome: 'Murilo Eduardo dos Santos'
 		}).subscribe(data => {
-			console.log('Set:user')
-	      console.log(data)
+			/*console.log('Set:user')
+			console.log(data)*/
 	    });
 
 		this.inscricao = this.route.params.subscribe((params: any) => {
-				this.chatsService.getChat(params['id']).subscribe(chat => {
-					
-					if(!chat) {
-						this.router.navigate(['nao-encontrado']);
-					} else {
-						this.chat = chat;
-						this.sidebarService.showDrawer(chat);
+			this.chatsService.getChat(params['id']).subscribe(chat => {
+				if(!chat._id) {
+					this.router.navigate([chat.value, 'nao-encontrado']);
+				} else {
+					this.router.navigate([chat._id]);
+					this.chat = chat;
 
-						// Seta a sala do _id desta aplicação
-						this.joinRoom(chat._id);
-					}
-				});
-			}
-		);
+					// Seta a sala do _id desta aplicação
+					this.joinRoom(chat._id);
+				}
+			});
+
+			this.chatsService.getChats().subscribe((data) => {
+				this.chats = data;
+			});
+		});
 
 		this.chatService.connection = this.chatService.getMessages().subscribe(message => {
 	      this.chatService.messages.push(message);
@@ -65,8 +66,6 @@ export class ChatComponent implements OnInit, OnDestroy {
 		this.inscricao.unsubscribe();
 		
 		this.chatService.connection.unsubscribe();
-
-		this.sidebarService.hideDrawer();
 	}
 
 	triggerToast(stringToast) {
@@ -75,15 +74,15 @@ export class ChatComponent implements OnInit, OnDestroy {
 
 	joinRoom(room) {
 		this.chatService.setRoom(room).subscribe(data => {
-			if(data['id'] == this.chatService.socket.id) {
-				this.triggerToast('Bem vindo ' + data['nome']);
+			if(data['socket_id'] == this.chatService.socket.id) {
+				this.triggerToast('Bem vindo ' + data['socket_id']);
 			} else {
-				this.triggerToast(data['nome'] + ' entrou');
+				this.triggerToast(data['socket_id'] + ' entrou');
 			}
 		});
 
 		this.chatService.getLeftRoom().subscribe(data => {
-			this.triggerToast(data['nome'] + ' saiu');
+			this.triggerToast(data['socket_id'] + ' saiu');
 		});
 	}
 }

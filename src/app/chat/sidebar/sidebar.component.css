@@ -1,0 +1,17 @@
+#slide-out.side-nav>li>a {
+	color: #fff;
+}
+.side-nav {
+	width: 240px;
+}
+.user-details>.action-user-detalis>a {
+	padding: 15px;
+	color: #fff;
+	height: auto;
+}
+.profile-image {
+	float: left;
+	width: 35px;
+	height: 35px;
+	margin-right: 15px;
+}

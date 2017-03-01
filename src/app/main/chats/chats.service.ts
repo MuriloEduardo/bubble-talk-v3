@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -6,8 +6,9 @@ import 'rxjs/add/operator/map';
 export class ChatsService {
 
 	private apiUrl: string = 'http://127.0.0.1:3000/api/';
-	public chats: any;
-	public chat: any;
+	chats: any;
+	chat: any;
+	mostrarSidebar = new EventEmitter<boolean>();
 
   	constructor(private http: Http) {
   		console.dir('Chats Service Inicializado...');
@@ -19,6 +20,7 @@ export class ChatsService {
   	}
 
 	getChat(id: string) {
+		this.mostrarSidebar.emit(true);
 		return this.chat = this.http.get(this.apiUrl + 'chat/' + id).map(res => res.json());
 	}
 
